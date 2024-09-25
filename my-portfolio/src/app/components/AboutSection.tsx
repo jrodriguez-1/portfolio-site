@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "../utils/TabButton";
+import TerminalCard from "../utils/TerminalCard";
 // import TabButton from "./TabButton";
 
 const TAB_DATA = [
@@ -55,21 +56,15 @@ const AboutSection = () => {
     <section className="text-white" id="about">
       <h1 className="text-center text-4xl text-white mb-4">About Me</h1>
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image 
-          alt={'image'}
-          src="/images/about-image.png" 
-          width={500} height={500} 
-          />
+      <div>
+      <TerminalCard/>
+      </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
-          </p>
-          <div className="flex flex-row justify-start mt-8">
+          {/* <p className="text-base lg:text-lg">
+            I’ve always had a passion for technology, and thrive on the creative challenges it presents. As a full stack developer, I've honed my skills in various domains including front-end design, data engineering, DevOps, and building rest APIs. I love creating the connective tissue that makes applications come to life. My journey in the Marine Corps instilled discipline, teamwork, and resilience; qualities that I carry with me every day, and reflect in my work. 
+            Beyond coding, I'm an avid outdoor enthusiast, finding inspiration in nature that often fuels my innovative thinking. Fitness is a big part of my life, teaching me the value of persistence and dedication, qualities I channel into my work. I'm deeply committed to my journey of self-improvement, constantly exploring new methodologies to stay ahead in this ever-evolving world. I strive for wisdom in all aspects of life, every day is one step closer to success and every failure is a lesson learned. Throughout my journey, it’s important that I not only achieve my goals, but aid those around me and leave a positive impact wherever I am. Software engineering has helped me explore ideas and express my creativity. I hope to continue on this path, and am excited for what the future holds.
+          </p> */}
+          {/* <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -91,10 +86,10 @@ const AboutSection = () => {
               {" "}
               Certifications{" "}
             </TabButton>
-          </div>
-          <div className="mt-8">
+          </div> */}
+          {/* <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab)?.content || null}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

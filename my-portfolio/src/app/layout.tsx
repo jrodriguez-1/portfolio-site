@@ -17,14 +17,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className={`${inter.className}`}>
         <Image
-          src="/images/abstract.jpg"
+          src="/images/flower-backdrop.jpg"
           alt="Background"
           fill
           style={{objectFit: 'cover'}}
           quality={100}
           priority
         />
-        <main className="relative z-30 max-w-8xl max-h-7xl mx-auto my-8 p-6 bg-black opacity-95">
+        <main className="relative z-30 max-w-8xl max-h-7xl mx-auto my-8 p-6 bg-slate-950 opacity-95">
           {children}
         </main>
       </body>

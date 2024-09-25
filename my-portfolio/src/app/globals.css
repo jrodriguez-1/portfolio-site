@@ -14,6 +14,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -28,4 +32,17 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
