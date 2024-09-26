@@ -1,22 +1,22 @@
 "use client";
 import React, { useTransition, useState } from "react";
-import Image from "next/image";
 import TabButton from "../utils/TabButton";
-import TerminalCard from "../utils/TerminalCard";
-// import TabButton from "./TabButton";
+import SynthesizerCard from "../utils/AboutCard";
 
 const TAB_DATA = [
   {
-    title: "Skills",
-    id: "skills",
+    title: "Experience",
+    id: "experience",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+      <ul className="list-disc pl-2 space-y-2">
+        <li>4 years of engineering experience in software development and system architecture, specializing in full-stack applications.</li>
+        <li>Proficient in Java Spring and Spring Boot, designing REST APIs and backend solutions.</li>
+        <li>Proficient in UI/UX development, focusing on user-centered design principles to enhance usability and engagement.</li>
+        <li>Java Spring and Spring Boot REST API development, designing scalable and efficient backend solutions.</li>
+        <li>Experience with Continuous Integration and Continuous Deployment (CI/CD) processes, ensuring efficient and reliable software delivery.</li>
+        <li>Experience in both relational and non-relational databases, including PostgreSQL, CockroachDB, and MongoDB, optimizing data storage and retrieval.</li>
+        <li>Skilled in HTML, CSS, and Tailwind CSS, creating responsive and visually appealing web interfaces.</li>
+        <li>Strong skills in performance optimization and troubleshooting to enhance application speed and scalability.</li>
       </ul>
     ),
   },
@@ -25,8 +25,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Code Platoon</li>
+        <li>Wilbur Wright College</li>
       </ul>
     ),
   },
@@ -36,14 +36,13 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
       </ul>
     ),
   },
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("experience");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id: string) => {
@@ -54,23 +53,17 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <h1 className="text-center text-4xl text-white mb-4">About Me</h1>
+      <h1 className="text-center text-4xl text-white mb-4 font-mono mt-10 underline">About Me</h1>
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div>
-      <TerminalCard/>
-      </div>
+        <SynthesizerCard />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          {/* <p className="text-base lg:text-lg">
-            I’ve always had a passion for technology, and thrive on the creative challenges it presents. As a full stack developer, I've honed my skills in various domains including front-end design, data engineering, DevOps, and building rest APIs. I love creating the connective tissue that makes applications come to life. My journey in the Marine Corps instilled discipline, teamwork, and resilience; qualities that I carry with me every day, and reflect in my work. 
-            Beyond coding, I'm an avid outdoor enthusiast, finding inspiration in nature that often fuels my innovative thinking. Fitness is a big part of my life, teaching me the value of persistence and dedication, qualities I channel into my work. I'm deeply committed to my journey of self-improvement, constantly exploring new methodologies to stay ahead in this ever-evolving world. I strive for wisdom in all aspects of life, every day is one step closer to success and every failure is a lesson learned. Throughout my journey, it’s important that I not only achieve my goals, but aid those around me and leave a positive impact wherever I am. Software engineering has helped me explore ideas and express my creativity. I hope to continue on this path, and am excited for what the future holds.
-          </p> */}
-          {/* <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-row justify-start mt-2 my-8 mx-auto text-2xl">
             <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
+              selectTab={() => handleTabChange("experience")}
+              active={tab === "experience"}
             >
               {" "}
-              Skills{" "}
+              Experience{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
@@ -86,10 +79,10 @@ const AboutSection = () => {
               {" "}
               Certifications{" "}
             </TabButton>
-          </div> */}
-          {/* <div className="mt-8">
+          </div>
+          <div className="mx-24 text-base">
             {TAB_DATA.find((t) => t.id === tab)?.content || null}
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const IntroSection = (index: number) => {
   return (
-    <section className="lg:py-4">
+    <section className="lg:py-4 ml-20">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50}}
@@ -22,7 +22,7 @@ const IntroSection = (index: number) => {
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl lg:leading-normal font-mono">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-100 to-gray-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-950 to-gray-600">
               Jose Rodriguez{" "}
             </span>
             <br></br>
@@ -47,7 +47,7 @@ const IntroSection = (index: number) => {
           viewport={{ once: true }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] relative">
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[250px] lg:h-[250px] relative">
             <Image
             	fill
               src="/images/walking.jpg"
