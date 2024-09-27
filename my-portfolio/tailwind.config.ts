@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'black-rgba': 'rgba(0, 0, 0, 0.8)',
+        primary: {
+          500: '#2563eb', // your primary color
+          600: '#1e40af', // darker shade for hover
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

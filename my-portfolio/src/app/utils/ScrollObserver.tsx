@@ -17,7 +17,7 @@ const ScrollObserver: React.FC<ScrollObserverProps> = ({ onIntersect }) => {
         onIntersect(!entry.isIntersecting);
       },
       {
-        rootMargin: "0px",
+        rootMargin: "-1px 0px 0px 0px",
         threshold: 0,
       }
     );

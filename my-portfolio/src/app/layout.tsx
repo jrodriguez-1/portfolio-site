@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <source src="/images/rain.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <main className="relative z-30 max-w-8xl max-h-7xl mx-auto my-8 p-6 bg-slate-300 opacity-95">
+        <main className="relative z-30 max-w-8xl max-h-7xl mx-auto my-8 p-6 bg-gradient-to-b from-gray-800 to-black opacity-95">
           {children}
         </main>
       </body>

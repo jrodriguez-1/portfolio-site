@@ -1,66 +1,42 @@
 "use client";
 import React, { useState } from "react";
-import GithubIcon from "../../../public/images/github.png";
-import LinkedinIcon from "../../../public/images/linkedin.png";
-import Link from "next/link";
-import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void; target: { email: { value: string; }; subject: { value: string; }; message: { value: any; }; }; }) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+  // const handleSubmit = async (e: { preventDefault: () => void; target: { email: { value: string; }; subject: { value: string; }; message: { value: any; }; }; }) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const form = e.currentTarget;
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
+      const response = await fetch("https://formspree.io/f/mvgpekoa", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
+      if (response.ok) {
+        console.log("Message sent.");
+        setEmailSubmitted(true);
+      } else {
+        console.error("Error sending message.");
+      }
   };
 
   return (
-    <section
-      id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
-    >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
-        </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          I&apos;m always looking for new opportunities to network. If you would like to get in contact, please reach out!
-        </p>
+    <section id="contact" className="py-16 bg-black text-white">
+      <div className="container mx-auto text-center z-10">
+      <h2 className="text-4xl font-bold mb-8">Contact Me</h2>
       </div>
       <div>
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
+          <p className="text-sky-300 text-2xl mt-12 flex justify-center">
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          <form className="flex flex-col max-w-lg mx-auto" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
                 htmlFor="email"

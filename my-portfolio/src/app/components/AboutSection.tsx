@@ -44,6 +44,7 @@ const TAB_DATA = [
 const AboutSection = () => {
   const [tab, setTab] = useState("experience");
   const [isPending, startTransition] = useTransition();
+  const [showText, setShowText] = useState(false);
 
   const handleTabChange = (id: string) => {
     startTransition(() => {
@@ -51,9 +52,13 @@ const AboutSection = () => {
     });
   };
 
+  const handleClick = () => {
+    setShowText((prev) => !prev);
+  }
+
   return (
-    <section className="text-white" id="about">
-      <h1 className="text-center text-4xl text-white mb-4 font-mono mt-10 underline">About Me</h1>
+    <section className="text-white bg-gray-800 py-16" id="about">
+      <h1 className="text-center text-4xl text-white mb-4 font-bold mt-10">About Me</h1>
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <SynthesizerCard />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">

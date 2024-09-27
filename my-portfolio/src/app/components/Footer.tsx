@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Footer = () => {
   return (
-    <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
+    <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white bg-gray-900">
       <div className="container flex justify-end pr-48">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-20 py-4">
         <motion.div
