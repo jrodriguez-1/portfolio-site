@@ -1,18 +1,5 @@
 {
   "version": 2,
   "buildCommand": "next build",
-  "framework": "nextjs",
-  "builds": [
-      {
-          "src": "dist/page.tsx",
-          "use": "@vercel/node",
-          "config": { "includeFiles": ["dist/**"] }
-      }
-  ],
-  "routes": [
-      {
-          "src": "/(.*)",
-          "dest": "dist/page.tsx"
-      }
-  ]
+  "framework": "nextjs"
 }
