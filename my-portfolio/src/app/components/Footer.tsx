@@ -10,13 +10,13 @@ const Footer = () => {
     <footer className=" border-t bottom-0 z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white bg-gray-900 py-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex sm:justify-between space-x-4 mr-10">
-        <motion.div
+        {/* <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               className="mb-4 sm:mb-0"
           >
-          <h1 className="text-2xl sm:text-5xl lg:text-3xl glitch-text tracking-wider font-bold">
+          <h1 className="sm:hidden text-2xl sm:text-5xl lg:text-3xl glitch-text tracking-wider font-bold">
             <TypeAnimation
               sequence={[
                 "Jose Rodriguez",
@@ -29,7 +29,7 @@ const Footer = () => {
               repeat={Infinity}
             />
             </h1>
-            </motion.div>
+            </motion.div> */}
 
             {/* Social Media Links */}
             <div className="flex flex-row space-x-4">

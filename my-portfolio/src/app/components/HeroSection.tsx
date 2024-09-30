@@ -47,7 +47,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-50">
               Jose Rodriguez{" "}
             </span>
-            {/* <p className="text-white text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 font-mono"></p> */}
           </h1>
           <p className="text-white text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 font-mono">
             Fullstack Developer | Marine Corps Veteran | Results-Driven Professional
@@ -70,21 +69,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
         >
           <div className="rounded-full bg-[#181818] w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64 relative overflow-hidden">
             <Image
-            	// fill
+            	fill
               src="/images/walking.jpg"
               alt="hero image"
-              layout="fill"
               objectFit="cover"
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              // loading="lazy"
               priority
               className="rounded-full"
-              // style={{
-							// 	borderRadius: '50%',
-							// 	position: 'absolute',
-              //   boxShadow: "0 8px 12px rgba(0, 0, 0, 0.5)",
-              //   objectFit:'cover',
-              // }}
             />
           </div>
         </motion.div>
