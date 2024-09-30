@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "commonjs",
+
+  "pre-commit": [
+      "ts.check",
+      "build",
+      "add-build"
+    ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -34,6 +40,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",
+    "pre-commit": "1.2.2",
+    "rimraf": "6.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
