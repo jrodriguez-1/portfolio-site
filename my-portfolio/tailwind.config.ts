@@ -39,14 +39,6 @@ const config: Config = {
     },
     },
 
-  plugins: [
-    function ({ addBase, theme }) {
-      addBase({
-        'html, body': { padding: 0, margin: 0, width: '100%', height: '100%', overflowX: 'hidden' },
-        'body': { minHeight: '100vh', display: 'flex', flexDirection: 'column' },
-        '#__next': { flex: 1, display: 'flex', flexDirection: 'column' },
-      })
-    },
-  ],
+  plugins: [],
 };
 export default config;

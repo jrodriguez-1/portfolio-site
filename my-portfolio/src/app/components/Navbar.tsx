@@ -1,21 +1,14 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
 
 const navLinks: {label: string; path: string}[] = [
-  { label: "// home", path: "#home" },
-  { label: "// about", path: "#about" },
-  { label: "// projects", path: "#projects"},
-  { label: "// contact", path: "#contact" },
+  { label: "home", path: "#home" },
+  { label: "about", path: "#about" },
+  { label: "contact", path: "#contact" },
 ];
 
-interface NavbarProps {
-  isFixed: boolean;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ isFixed }) => {
+const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
 
@@ -29,83 +22,63 @@ const Navbar: React.FC<NavbarProps> = ({ isFixed }) => {
   };
 
     return (
-      <nav 
-        ref={navbarRef}
-        className={`${isFixed ? "fixed top-0 left-0 right-0" : "absolute top-0 left-0 right-0"
-        } z-10 bg-black-rgba bg-opacity-100 border border-[#33353F] backdrop-filter backdrop-grayscale backdrop-blur-lg`}
-        style={{ transition: 'top 0.3s'}}
-      >
-        <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-20 py-4">
-        {/* <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
-          >
-        <h1 className="text-stone-50 mb-4 text-4xl sm:text-5xl lg:text-3xl lg:leading-normal font-bold">
-              <TypeAnimation
-                sequence={[
-                  "Welcome to my portfolio!",
-                  1000
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </h1>
-          </motion.div> */}
-          <div className="mobile-menu block md:hidden">
-            {!navbarOpen ? (
-              <button
-                onClick={() => setNavbarOpen(true)}
-                className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-              >
-                <Bars3Icon className="h-5 w-5" />
-              </button>
-            ) : (
-              <button
-                onClick={() => setNavbarOpen(false)}
-                className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-              >
-                <XMarkIcon className="h-5 w-5" />
-              </button>
-            )}
+      <nav ref={navbarRef} className="fixed top-0 left-0 right-0 z-10 bg-gray-300 bg-opacity-10 border border-[#33353F] backdrop-blur-lg backdrop-brightness-125 backdrop-contrast-150 border-b shadow-lg py-1">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center">
+          <div className="flex justify-center items-center border-4 border-gray-300 w-16 h-16 sm:w-14 sm:h-14 text-center glitch-text">
+            <h1 className=" text-xl sm:text-2xl glitch-text tracking-wider font-bold">JR</h1>
           </div>
-          {/* Desktop Menu */}
-        <div className="hidden md:flex md:w-auto">
-          <ul className="flex space-x-6 items-center font-bold text-neutral-50">
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6 items-center font-bold">
             {navLinks.map((link, index) => (
-              <li key={index}>
                 <a
+                  key={index}
                   href={link.path}
-                  className="text-xl hover:text-white"
+                  className="text-white lg:text-2xl tracking-wider z-10 no-underline hover:underline after:content-[''] after:absolute after: w-full after:h-0.5
+                  after:bg-white after:bottom-0 after:left-0
+                           after:scale-x-0 hover:after:scale-x-100
+                           after:transition-transform after:duration-300 after:origin-left"
                   onClick={(e) => smoothScroll(e, link.path.substring(1))}
                 >
                   {link.label}
                 </a>
-              </li>
             ))}
-          </ul>
         </div>
-        {/* Mobile Menu */}
-        {navbarOpen && (
-          <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-90 z-20 flex flex-col justify-center items-center md:hidden">
-            <ul className="flex flex-col space-y-8 items-center font-serif text-neutral-50 text-2xl">
-              {navLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.path}
-                    onClick={(e) => smoothScroll(e, link.path.substring(1))}
-                    className="hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+
+         {/* Mobile Menu Button */}
+         <div className="md:hidden">
+            <button
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className="text-white focus:outline-none px-10"
+            >
+              {navbarOpen ? (
+                <XMarkIcon className="h-6 w-6" />
+              ) : (
+                <Bars3Icon className="h-6 w-6" />
+              )}
+            </button>
           </div>
-        )}
+        </div>
       </div>
+
+        {/* Mobile Menu */}
+          <div className={`md:hidden ${navbarOpen ? 'block' : 'hidden'} bg-gray-900 bg-opacity-95`}>
+            <div className="container mx-auto px-4 py-4">
+              {navLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.path}
+                  onClick={(e) => smoothScroll(e, link.path.substring(1))}
+                  className="block text-white hover:text-gray-300 py-2 text-lg"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
     </nav>
   );
 };

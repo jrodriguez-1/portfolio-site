@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 
-const AudioPlayer: React.FC = () => {
+const AboutCard: React.FC = () => {
   
   return (
     <div className="bg-gray-900 p-6 rounded-lg shadow-lg max-w-2xl mx-auto text-white min-h-full">
@@ -21,4 +21,4 @@ const AudioPlayer: React.FC = () => {
   );
 };
 
-export default AudioPlayer;
+export default AboutCard;

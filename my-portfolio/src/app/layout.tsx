@@ -15,18 +15,25 @@ import { ReactNode } from "react";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className={`${inter.className}`}>
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        >
-          <source src="/images/rain.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <main className="relative z-30 max-w-8xl max-h-7xl mx-auto my-8 p-6 bg-gradient-to-b from-gray-800 to-black opacity-95">
+      <div className="fixed inset-0 z-0">
+      <Image
+          src="/images/smoke.jpg"
+          alt="background"
+          fill
+          quality={100}
+          priority
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
+      <main className="relative z-10 min-h-screen">
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black opacity-20" />
+          <div className="relative z-20 max-w-8xl mx-auto">
           {children}
+          </div>
         </main>
       </body>
     </html>
