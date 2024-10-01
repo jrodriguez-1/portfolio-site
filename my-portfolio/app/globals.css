@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 :root {
@@ -15,11 +16,13 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-body {
+  body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -33,19 +36,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 @layer components {
@@ -72,38 +66,25 @@ body {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @keyframes glitch {
-  2%,64% {
-    transform: translate(2px,0) skew(0deg);
-  }
-  4%,60% {
-    transform: translate(-2px,0) skew(0deg);
-  }
-  62% {
-    transform: translate(0,0) skew(5deg); 
-  }
+  2%,64% { transform: translate(2px,0) skew(0deg); }
+  4%,60% { transform: translate(-2px,0) skew(0deg); }
+  62% { transform: translate(0,0) skew(5deg); }
 }
 
 @keyframes glitch-top {
-  2%,64% {
-    transform: translate(2px,-2px);
-  }
-  4%,60% {
-    transform: translate(-2px,2px);
-  }
-  62% {
-    transform: translate(13px,-1px) skew(-13deg); 
-  }
+  2%,64% { transform: translate(2px,-2px); }
+  4%,60% { transform: translate(-2px,2px); }
+  62% { transform: translate(13px,-1px) skew(-13deg); }
 }
 
 @keyframes glitch-bottom {
-  2%,64% {
-    transform: translate(-2px,0);
-  }
-  4%,60% {
-    transform: translate(-2px,0);
-  }
-  62% {
-    transform: translate(-22px,5px) skew(21deg); 
-  }
+  2%,64% { transform: translate(-2px,0); }
+  4%,60% { transform: translate(-2px,0); }
+  62% { transform: translate(-22px,5px) skew(21deg); }
 }
