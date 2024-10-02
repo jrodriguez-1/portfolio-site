@@ -3,8 +3,6 @@ import { Suspense, lazy } from 'react';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
-// import AboutSection from "./components/AboutSection";
-// import EmailSection from "./components/EmailSection";
 
 const AboutSection = lazy(() => import("./components/AboutSection"));
 const EmailSection = lazy(() => import("./components/EmailSection"));

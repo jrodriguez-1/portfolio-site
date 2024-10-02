@@ -13,10 +13,9 @@ const config: Config = {
         'black-rgba': 'rgba(0, 0, 0, 0.8)',
         primary: {
           ...colors.purple,
-          500: '#2563eb', // your custom primary color
-          600: '#1e40af', // darker shade for hover
-        },
-        secondary: colors.pink,
+          500: '#2563eb',
+          600: '#1e40af',
+        }
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

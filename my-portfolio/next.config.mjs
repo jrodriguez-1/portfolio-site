@@ -9,7 +9,6 @@ const nextConfig = {
     minimumCacheTTL: 60,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Add any custom webpack configurations here if needed
     return config;
   },
 };
