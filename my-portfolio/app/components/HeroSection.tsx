@@ -102,10 +102,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
               }}
               className="flex flex-col items-center"
             >
-              <img
+              <Image
                 src={skill.icon}
                 alt={skill.name}
                 className=" mb-2 w-8 h-8 sm:w-8"
+                objectFit="contain"
+                width={32}
+                height={32}
+                priority
               />
               <p className="text-white sm:text-xm">{skill.name}</p>
               </motion.div>

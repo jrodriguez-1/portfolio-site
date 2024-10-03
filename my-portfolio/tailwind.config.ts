@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import colors from "tailwindcss/colors";
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: [
@@ -9,13 +9,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        'black-rgba': 'rgba(0, 0, 0, 0.8)',
-        primary: {
-          ...colors.purple,
-          500: '#2563eb',
-          600: '#1e40af',
-        }
+      fontFamily: {
+        "sans": ['var(--font-sans)', ...fontFamily.sans],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

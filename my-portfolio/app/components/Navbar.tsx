@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
         <div className="flex items-center">
-          <div className="flex justify-center items-center border-4 border-gray-300 w-16 h-16 sm:w-14 sm:h-14 text-center glitch-text">
+          <div className="flex justify-center items-center border-4 border-gray-300 w-16 h-16 sm:w-14 sm:h-14 glitch-text">
             <h1 className=" text-xl sm:text-2xl glitch-text tracking-wider font-bold">JR</h1>
           </div>
         </div>
