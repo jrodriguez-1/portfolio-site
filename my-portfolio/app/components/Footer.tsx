@@ -1,9 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
 
 const Footer = () => {
   return (

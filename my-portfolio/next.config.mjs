@@ -8,7 +8,7 @@ const nextConfig = {
     optimizeCss: true,
   },
 
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     config.optimization.splitChunks = {
       chunks: 'all',
       minSize: 20000,

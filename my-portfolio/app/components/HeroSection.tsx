@@ -67,14 +67,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
           viewport={{ once: true }}
           className="col-span-1 sm:col-span-4 place-self-center mt-6 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64 relative overflow-hidden">
+          <div className="relative rounded-full bg-[#181818] w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64  overflow-hidden">
             <Image
-            	fill
               src="/images/walking.jpg"
               alt="hero image"
-              objectFit="cover"
-              priority
-              className="rounded-full"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+              className="rounded-full object-cover"
             />
           </div>
         </motion.div>
@@ -83,7 +82,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
       {/* Skill Icons */}
       <div className={`transition-opacity duration-500 ${isVisible ? 'fade-in' : 'opacity-0'} border-t-2 border-gray-300 w-full sm:mb-4`}/>
       <div className="container mx-auto py-2">
-        <div className={`transition-opacity duration-500 ${isVisible ? 'fade-in' : 'opacity-0'} sm:border-[#33353F] sm:border rounded-md py-4 px-4 sm:px-4 bg-slate-400 flex flex-wrap gap-4 justify-center sm:gap-6 lg:gap-10`}>
+        <div className={`transition-opacity duration-500 ${isVisible ? 'fade-in' : 'opacity-0'} sm:border-[#33353F] sm:border rounded-md py-4 px-4 sm:px-4 bg-slate-500 flex flex-wrap gap-4 justify-center sm:gap-6 lg:gap-10`}>
           {skills.map((skill) => (
             <div key={skill.name} className="flex flex-row items-center sm:my-0 h-full text-center">
               <motion.div
@@ -105,11 +104,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
               <Image
                 src={skill.icon}
                 alt={skill.name}
-                className=" mb-2 w-8 h-8 sm:w-8"
-                objectFit="contain"
+                layout="contain"
                 width={32}
                 height={32}
-                priority
+                className=" mb-2 w-8 h-8 sm:w-8"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
               />
               <p className="text-white sm:text-xm">{skill.name}</p>
               </motion.div>
