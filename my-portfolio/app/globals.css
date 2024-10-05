@@ -66,6 +66,18 @@
   }
 }
 
+/* .logo {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--logo-bg-color, #000);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+} */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

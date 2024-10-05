@@ -44,7 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
           className="col-span-1 sm:col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-6xl font-bold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-50">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-gray-50">
               Jose Rodriguez{" "}
             </span>
           </h1>
