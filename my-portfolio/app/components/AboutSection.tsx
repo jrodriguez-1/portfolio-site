@@ -52,9 +52,9 @@ const AboutSection = () => {
   return (
     <section className="text-white bg-gray-800 py-8 sm:py-12" id="about">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-center text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 font-bold">About Me</h1>
+      <h1 className="text-center text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 mt-16 font-bold">About Me</h1>
         {/* Grid Layout for Synthesizer Card and Tab Content */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center py-6">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start py-6">
           {/* Left Column: Synthesizer Card */}
           <div className="w-full lg:w-1/2">
             <SynthesizerCard />
