@@ -69,11 +69,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
         >
           <div className="relative rounded-full bg-[#181818] w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64  overflow-hidden">
             <Image
-              src="/images/walking.jpg"
+              src="/images/headshot.jpg"
               alt="hero image"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-              className="rounded-full object-cover"
+              className="rounded-full object-cover object-[center_26%]"
             />
           </div>
         </motion.div>
@@ -107,7 +107,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ index }) => {
                 layout="contain"
                 width={32}
                 height={32}
-                className=" mb-2 w-8 h-8 sm:w-8"
+                className="mb-2 w-8 h-8 sm:w-8"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
               />
               <p className="text-white sm:text-xm">{skill.name}</p>

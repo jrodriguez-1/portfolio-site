@@ -17,7 +17,15 @@ const Navbar = () => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (error) {
+        // Fallback for browsers that don't support smooth scrolling
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+      }
     }
     setNavbarOpen(false);
   };
